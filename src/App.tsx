@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <John/>
+      <div>yo wassup</div>
       
     </div>
   );

@@ -1,17 +1,11 @@
 import React from "react";
 
-export default function John() {
+const John = () => {
     return (
 
         <h1>yert</h1>
     )
 
-
-
-
-
-
-
-
-
 }
+
+export default John

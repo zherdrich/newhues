@@ -1,7 +1,7 @@
 import React from "react";
 import "./quiz.css";
 
-export default function Quiz() {
+export default function Quiz() { 
 
     return (
 

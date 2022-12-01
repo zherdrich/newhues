@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    align-items: center;
 }
 
 
@@ -29,7 +29,7 @@
 }
 
 .colorblock {
-    background-color: red;
+    background-color: blue;
     display: flex;
     position: relative;
     top: 380px;

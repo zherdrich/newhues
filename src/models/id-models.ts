@@ -13,7 +13,3 @@ export interface Search {
     format: string;
     thumb: string;
 }
-
-export interface ColorSearch {
-
-}

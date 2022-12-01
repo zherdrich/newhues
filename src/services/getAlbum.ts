@@ -11,8 +11,6 @@ export default function getAlbum(
       .get<Results>(`https://api.spoonacular.com/recipes/complexSearch`, {
         params: {
           apiKey: process.env.REACT_APP_API_KEY,
-          addRecipeNutrition: true,
-          addRecipeInformation: true,
           query: query,
         },
       })

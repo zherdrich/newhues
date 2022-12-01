@@ -30,7 +30,7 @@ export default function Home() {
             setSearchInput(e.target.value);
           }}
           value={searchInput}
-          onKeyDown={(e) => {
+          onKeyDown={(e) => {  
             if (e.key === "Enter") {
               search();
             }

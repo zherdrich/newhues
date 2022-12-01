@@ -12,14 +12,14 @@
 
 .welcome {
 
-    background-color: lime;
+    background-color: red;
     display: flex;
     position: relative;
     top: 330px;
 
 }
 .title {
-    background-color: lime;
+    background-color: yellow;
     display: flex;
     position: relative;
     top: 340px;

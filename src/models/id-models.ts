@@ -13,3 +13,11 @@ export interface Search {
     format: string;
     thumb: string;
 }
+
+export default interface Information {
+    id: number,
+    title: string,
+    sourceUrl: string,
+    servings: string,
+    readyInMinutes: number,
+  }

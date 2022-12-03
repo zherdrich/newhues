@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Information } from "../models/id-model";
+import Information from "../models/id-models";
 
 //install axios
 //replace parameters with parameters from discogs api
@@ -7,7 +7,7 @@ export default function getInfo(
     id: number,
 ): Promise<Information | void> {
     return axios
-    .get<Information>(`https://api.spoonacular.com/recipes/${encodeURIComponent(id)}/information`, {
+    .get<Information>(`https://api.discogs.com/database/search${encodeURIComponent(id)}/information`, {
       params: {
         apiKey: process.env.REACT_APP_API_KEY,
         includeNutrition: true

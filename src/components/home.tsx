@@ -19,13 +19,13 @@ export default function Home() {
   }
 
   return (
-    <div className="home2">
-      <div className="searchBar2">
+    <div className="home">
+      <div className="searchBar">
         <input
-          className="search2"
-          id="searchbar2"
-          type="text2"
-          placeholder="album name...2"
+          className="search"
+          id="searchbar"
+          type="text"
+          placeholder="album name..."
           onChange={(e) => {
             setSearchInput(e.target.value);
           }}

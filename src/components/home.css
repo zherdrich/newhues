@@ -12,14 +12,14 @@
 
 .welcome {
 
-    background-color: red;
+    background-color: blue;
     display: flex;
     position: relative;
     top: 330px;
 
 }
 .title {
-    background-color: yellow;
+    background-color: blue;
     display: flex;
     position: relative;
     top: 340px;
@@ -29,7 +29,7 @@
 }
 
 .colorblock {
-    background-color: blue;
+    background-color: red;
     display: flex;
     position: relative;
     top: 380px;

@@ -6,20 +6,43 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.main {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
+.nhtitle {
+    position: relative;
+    top: 300px;
+}
+
+.nhdesc {
+    position: relative;
+    top: 400px;
+    display: flex;
+    text-align: center;
+    width: 80%;
+    line-height: 30px;
+
+}
 
 .welcome {
 
-    background-color: blue;
+    background-color: green;
     display: flex;
     position: relative;
     top: 330px;
 
 }
 .title {
-    background-color: blue;
+    background-color: green;
     display: flex;
     position: relative;
     top: 340px;
@@ -29,7 +52,7 @@
 }
 
 .colorblock {
-    background-color: red;
+    background-color: yellow;
     display: flex;
     position: relative;
     top: 380px;
@@ -41,7 +64,7 @@
 .start {
     display: flex;
     position: relative;
-    top: 400px;
+    top: 650px;
     align-items: center;
     justify-content: center;
     width: 100px;

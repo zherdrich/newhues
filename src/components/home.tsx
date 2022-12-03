@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="home">
       <div className="main">
-        <div className="nhtitle">new hues</div>
+        <div className="nhtitle">n e w  h u e s </div>
         <div className="nhdesc">
           new hues is a color-focused
           music collection app 

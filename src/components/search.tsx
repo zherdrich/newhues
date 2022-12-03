@@ -1,9 +1,12 @@
 export default function Search() {
   return (
-    <div>
+    <div className="search">
+        <div className="main">
+
+
       <div className="searchBar">
         <input
-          className="search"
+          className="searchbar"
           id="searchbar"
           type="text"
           placeholder="Search..."
@@ -21,6 +24,8 @@ export default function Search() {
           <i className="fa-solid fa-magnifying-glass"></i>
         </button> */}
       </div>
+
+        </div>
     </div>
   );
 }

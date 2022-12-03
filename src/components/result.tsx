@@ -5,6 +5,6 @@ export default function Result() {
 
     return (
 
-        <div>result1</div>
+        <div>result2</div>
     )
 }

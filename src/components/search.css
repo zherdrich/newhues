@@ -20,6 +20,28 @@
 
 .searchbar {
     position: relative;
-    bottom: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
     height: 30px;
+    border-radius: 5px;
+    width: 380px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 20px;
+
+}
+
+.listItem {
+    position: relative;
+    width: 90%;
+    top: 10px;
+    margin-bottom: 50px;
+    font-size: 25px;
+    color: #444;
+    font-weight: 500;
+    overflow-wrap: normal;
+    text-align: left;
 }

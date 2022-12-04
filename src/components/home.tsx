@@ -27,9 +27,9 @@ export default function Home() {
           new hues is a color-focused
           music collection app 
           that helps you find
-          and organize all your 
+          and organize your 
           favorites and soon-to-bes
-          in one place</div>
+          all in one place</div>
 <a className="start" href="/search">
   <div>get started</div>
 </a>

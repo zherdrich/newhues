@@ -8,7 +8,7 @@ export default function getAlbum(
     query: string,
   ): Promise<Search[] | void> {
     return axios
-      .get<Results>(`https://api.discogs.com/artists/`, {
+      .get<Results>(`https://api.discogs.com/database/search?q=${query}`, {
         params: {
           apiKey: process.env.REACT_APP_API_KEY,
           query: query,

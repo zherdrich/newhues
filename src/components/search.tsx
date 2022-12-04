@@ -1,3 +1,8 @@
+import "./search.css"
+import { Search } from "../models/id-models";
+
+
+
 export default function Search() {
   return (
     <div className="search">
@@ -10,19 +15,7 @@ export default function Search() {
           id="searchbar"
           type="text"
           placeholder="Search..."
-          // onChange={(e) => {
-          //   setSearchInput(e.target.value);
-          // }}
-          // value={searchInput}
-          // onKeyDown={(e) => {
-          //   if (e.key === "Enter") {
-          //     search();
-          //   }
-          // }}
         />
-        {/* <button onClick={search}>
-          <i className="fa-solid fa-magnifying-glass"></i>
-        </button> */}
       </div>
 
         </div>

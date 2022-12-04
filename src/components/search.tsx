@@ -9,7 +9,7 @@ export default function SearchBar() {
 
     const [query, setQuery] = useState("");
 
-    console.log(query);
+    console.log(AlbumList.filter((album) => album.album_name.toLowerCase().includes("gr")));
   return (
     <div className="search">
         <div className="main">
@@ -19,7 +19,7 @@ export default function SearchBar() {
         <input className="searchbar" id="searchbar" type="text" placeholder="Search..." 
         onChange={(e) => setQuery(e.target.value)}/>
         <ul className="list">
-            {AlbumList.map((album) => ( <li key={album.id} className="listItem">{album.album_name} by {album.artist_name}</li> ))}
+            {AlbumList.filter((album) => album.album_name.toLowerCase().includes(query)).map((album) => ( <li key={album.id} className="listItem">{album.album_name} by {album.artist_name}</li> ))}
         </ul>
       </div>
 

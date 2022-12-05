@@ -19,7 +19,7 @@ export default function SearchBar() {
         <input className="searchbar" id="searchbar" type="text" placeholder="Search..." 
         onChange={(e) => setQuery(e.target.value)}/>
         <ul className="list">
-            {AlbumList.filter((album) => album.album_name.toLowerCase().includes(query.toLowerCase())).map((album) => ( <li key={album.id} className="listItem">{album.album_name} by {album.artist_name}</li> ))}
+            {AlbumList.filter((album) => album.album_name.toLowerCase().includes(query.toLowerCase()) || album.artist_name.toLowerCase().includes(query.toLowerCase())).map((album) => ( <li key={album.id} className="listItem">{album.album_name} by {album.artist_name}</li> ))}
         </ul>
       </div>
 

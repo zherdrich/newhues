@@ -3,15 +3,11 @@ export interface Results {
 }
 
 export interface Search {
-    query: string;
     title: string;
-    release_title: string;
-    artist: string;
-    genre: string;
-    style: string;
+    genre: string[];
     year: string;
-    format: string;
-    thumb: string;
+    cover_image: string;
+    id: number;
 }
 
 export default interface Information {

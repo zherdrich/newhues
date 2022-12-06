@@ -1,15 +1,33 @@
 import "./search.css"
 import getAlbum from "../services/getAlbum";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AlbumList } from "./testarray";
+import { stringify } from "querystring";
+import { Results, Search } from "../models/id-models";
 
 
 
 export default function SearchBar() {
 
-    const [query, setQuery] = useState("");
+    const apiKey1 = process.env.REACT_APP_API_KEY || "";
 
-   
+    const [query, setQuery] = useState("");
+    const [album, setAlbum] = useState<Search[]>([]);
+    useEffect(() => {
+    getAlbum(query, apiKey1).then(data => {
+    
+        data.results.forEach((index) => {
+            setAlbum(
+                [...album,{
+                    title: index.title,
+                    genre: index.genre.filter((x) => x),
+                    year: index.year,
+                    id: index.id,
+                    cover_image: index.cover_image}]
+            )
+        })
+    })
+},[query])
   return (
     <div className="search">
         <div className="main">
@@ -19,7 +37,15 @@ export default function SearchBar() {
         <input className="searchbar" id="searchbar" type="text" placeholder="Search..." 
         onChange={(e) => setQuery(e.target.value)}/>
         <ul className="list">
-            {AlbumList.filter((album) => album.album_name.toLowerCase().includes(query.toLowerCase()) || album.artist_name.toLowerCase().includes(query.toLowerCase())).map((album) => ( <li key={album.id} className="listItem">{album.album_name} by {album.artist_name}</li> ))}
+            {album.map((result) => 
+            <li>
+                <p>{result.title}</p>
+                <p>{result.genre}</p>
+                <p>{result.year}</p>
+                <img src={result.cover_image} alt="album cover" />
+            </li>
+
+            )}
         </ul>
       </div>
 

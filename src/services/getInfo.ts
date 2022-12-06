@@ -10,7 +10,6 @@ export default function getInfo(
     .get<Information>(`https://api.discogs.com/database/search${encodeURIComponent(id)}/information`, {
       params: {
         apiKey: process.env.REACT_APP_API_KEY,
-        includeNutrition: true
       },
     })
     .then((response) => {

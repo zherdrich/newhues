@@ -13,9 +13,9 @@ import { useState } from 'react';
 function App() {
 
 
-  // const CLIENT_ID = "xGjFKCRurYCzGXLXddxG"
-  // const REDIRECT_URI = "http://localhost:3001"
-  // const AUTH_ENDPOINT = "https://www.discogs.com/oauth/authorize"
+  const CLIENT_ID = "xGjFKCRurYCzGXLXddxG"
+  const REDIRECT_URI = "http://localhost:3000"
+  const AUTH_ENDPOINT = "https://www.discogs.com/oauth/authorize"
   const RESPONSE_TYPE = "token"
   const [token, setToken] = useState("")
   const [searchKey, setSearchKey] = useState("")

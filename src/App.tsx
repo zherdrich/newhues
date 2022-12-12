@@ -6,11 +6,29 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Link, NavLink } from 
 import Result from './components/result';
 import Search from './components/search';
 import { useState } from 'react';
+import express from 'express'
+import path from 'path';
 
 //experimentation begins on line 25
 
 
 function App() {
+
+
+  const app = express();
+
+  
+
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../components/home.tsx'))
+  }) 
+
+  app.get('/auth', (req, res) => {
+    res.redirect(
+      'https://discogs.com/oauth/authorize?oauth_token=<your_oauth_request_token>'
+    )
+  })
+
 
 
   // const CLIENT_ID = "xGjFKCRurYCzGXLXddxG"

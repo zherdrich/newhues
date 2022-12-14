@@ -14,7 +14,7 @@ import path from 'path';
 
 function App() {
 
-
+  require('dotenv').config();
   const app = express();
 
   
@@ -23,11 +23,11 @@ function App() {
     res.sendFile(path.join(__dirname, '../components/home.tsx'))
   }) 
 
-  app.get('/auth', (req, res) => {
-    res.redirect(
-      'https://discogs.com/oauth/authorize?oauth_token=<your_oauth_request_token>'
-    )
-  })
+  // app.get('/auth', (req, res) => {
+  //   res.redirect(
+  //     `https://discogs.com/oauth/authorize?oauth_token=${}`
+  //   )
+  // })
 
 
 

@@ -19,28 +19,28 @@ function App() {
 
   
 
-  // app.get('/', (req, res) => {
-  //   res.sendFile(path.join(__dirname, '../components/home.tsx'))
-  // }) 
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../components/home.tsx'))
+  }) 
 
-  // app.get('/auth', (req, res) => {
-  //   res.redirect(
-  //     `https://discogs.com/oauth/authorize?oauth_token=${}`
-  //   )
-  // })
-
-
+  app.get('/auth', (req, res) => {
+    res.redirect(
+      `https://discogs.com/oauth/authorize?oauth_token=${}`
+    )
+  })
 
 
-  // const CLIENT_ID = "xGjFKCRurYCzGXLXddxG"
-  // const REDIRECT_URI = "http://localhost:3000"
-  // const AUTH_ENDPOINT = "https://www.discogs.com/oauth/authorize"
-  // const RESPONSE_TYPE = "token"
-  // const [token, setToken] = useState("")
-  // const [searchKey, setSearchKey] = useState("")
-  // const [artists, setArtists] = useState([])
-  // const [data, setData] = useState([])
-  // const [item]
+
+
+  const CLIENT_ID = "xGjFKCRurYCzGXLXddxG"
+  const REDIRECT_URI = "http://localhost:3000"
+  const AUTH_ENDPOINT = "https://www.discogs.com/oauth/authorize"
+  const RESPONSE_TYPE = "token"
+  const [token, setToken] = useState("")
+  const [searchKey, setSearchKey] = useState("")
+  const [artists, setArtists] = useState([])
+  const [data, setData] = useState([])
+  const [item]
 
 
 

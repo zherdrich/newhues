@@ -8,6 +8,7 @@ import Search from './components/search';
 import express from 'express'
 import path from 'path';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 
@@ -35,6 +36,12 @@ function App() {
 
 }, [])
 
+const logout = () => {
+  setToken ("")
+  window.localStorage.removeItem("token")
+}
+
+
 
 
   return (
@@ -46,23 +53,25 @@ function App() {
           <Route path="/result" element={<Result />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
-      </Router> */}
+  </Router> */}
 
-      <div className="home">
-      <div className="main">
-        <div className="nhtitle">n e w  h u e s </div>
-        <div className="nhdesc">
-          new hues is a color-focused
-          music collection app 
-          that helps you find
-          and organize your 
-          favorites and soon-to-bes
-          all in one place</div>
+  
+  <div className="home">
+    
+    <div className="nhtitle">n e w  h u e s </div>
+    <div className="nhdesc">
+      new hues is a color-focused
+      music collection app 
+      that helps you find
+      and organize your 
+      favorites and soon-to-bes
+      all in one place</div>
+{!token ? 
 <a className="start" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
-  <div>login</div>
-</a>
-      </div>
-    </div>
+<div>login</div>
+</a> : <button onClick={logout}>Logout</button> }
+</div>
+      
     </div>
   );
 }

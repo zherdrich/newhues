@@ -19,6 +19,13 @@ export default function Home() {
   // }
 
 
+  const CLIENT_ID = "56f79d1a09c34459a7514616e29ec33c"
+  const REDIRECT_URI = "http://localhost:3000"
+  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
+  const RESPONSE_TYPE = "token"
+  
+
+
   return (
     <div className="home">
       <div className="main">
@@ -30,8 +37,8 @@ export default function Home() {
           and organize your 
           favorites and soon-to-bes
           all in one place</div>
-<a className="start" href="/search">
-  <div>get started</div>
+<a className="start" href={}>
+  <div>login</div>
 </a>
       </div>
     </div>

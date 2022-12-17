@@ -30,8 +30,6 @@ function App() {
   })
 
 
-
-
   const CLIENT_ID = "xGjFKCRurYCzGXLXddxG"
   const REDIRECT_URI = "http://localhost:3000"
   const AUTH_ENDPOINT = "https://www.discogs.com/oauth/authorize"

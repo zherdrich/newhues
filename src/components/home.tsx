@@ -2,45 +2,9 @@ import React from "react";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import getAlbum from "../services/getAlbum";
 import { Search } from "../models/id-models";
 
 export default function Home() {
-  // const navigate = useNavigate();
-  // const [albumData, setAlbumData] = useState<Search[]>([]);
-  // const [searchInput, setSearchInput] = useState<string>("");
 
-  // function search() {
-  //   getAlbum(searchInput).then((data) => {
-  //     if (data) {
-  //       setAlbumData(data);
-  //     }
-  //   });
-  // }
-
-
-  const CLIENT_ID = "56f79d1a09c34459a7514616e29ec33c"
-  const REDIRECT_URI = "http://localhost:3000"
-  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
-  const RESPONSE_TYPE = "token"
   
-
-
-  return (
-    <div className="home">
-      <div className="main">
-        <div className="nhtitle">n e w  h u e s </div>
-        <div className="nhdesc">
-          new hues is a color-focused
-          music collection app 
-          that helps you find
-          and organize your 
-          favorites and soon-to-bes
-          all in one place</div>
-<a className="start" href={}>
-  <div>login</div>
-</a>
-      </div>
-    </div>
-  );
 }

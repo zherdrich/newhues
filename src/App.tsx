@@ -9,38 +9,14 @@ import { useState } from 'react';
 import express from 'express'
 import path from 'path';
 
-//experimentation begins on line 25
 
 
 function App() {
 
-  require('dotenv').config();
-  const app = express();
-
-  
-
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../components/home.tsx'))
-  }) 
-
-  app.get('/auth', (req, res) => {
-    res.redirect(
-      `https://discogs.com/oauth/authorize?oauth_token=${}`
-    )
-  })
-
-
-  const CLIENT_ID = "xGjFKCRurYCzGXLXddxG"
+  const CLIENT_ID = "56f79d1a09c34459a7514616e29ec33c"
   const REDIRECT_URI = "http://localhost:3000"
-  const AUTH_ENDPOINT = "https://www.discogs.com/oauth/authorize"
+  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
   const RESPONSE_TYPE = "token"
-  const [token, setToken] = useState("")
-  const [searchKey, setSearchKey] = useState("")
-  const [artists, setArtists] = useState([])
-  const [data, setData] = useState([])
-  const [item]
-
-
 
 
 
@@ -48,22 +24,28 @@ function App() {
     <div className="App">
             <Router>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search/>}/>
           <Route path="/result" element={<Result />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
       </Router>
 
-
-      <div className='loginpage'>
-      {!token ?
-      <a className='logintonewhues' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>loginToSongify</a>
-      : <button className='logoutButton' onClick={logout}><CgLogIn/></button>}
-      {token ? <form onSubmit={searchArtists}>
-
-      </form> : <h1></h1>}
-  </div>
+      <div className="home">
+      <div className="main">
+        <div className="nhtitle">n e w  h u e s </div>
+        <div className="nhdesc">
+          new hues is a color-focused
+          music collection app 
+          that helps you find
+          and organize your 
+          favorites and soon-to-bes
+          all in one place</div>
+<a className="start" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}`}>
+  <div>login</div>
+</a>
+      </div>
+    </div>
     </div>
   );
 }

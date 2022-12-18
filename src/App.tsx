@@ -20,6 +20,7 @@ function App() {
   const RESPONSE_TYPE = "token"
 
   const [token, setToken] = useState("")
+  const [searchKey, setSearchKey] = useState("")
 
   useEffect(() => {
     const hash = window.location.hash
@@ -39,6 +40,22 @@ function App() {
 const logout = () => {
   setToken ("")
   window.localStorage.removeItem("token")
+}
+
+const searchArtists = async (e:React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
+  const {data} = await axios.get("https://api.spotify.com/v1/search", {
+    headers: {
+        Authorization: `Bearer ${token}`
+        // uses bearer and the token above
+    },
+    params: {
+        q: searchKey,
+        // state from above
+        type: "artist"
+        // params for spotify api for artists
+    }
+})
 }
 
 
@@ -70,6 +87,18 @@ const logout = () => {
 <a className="start" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
 <div>login</div>
 </a> : <button onClick={logout}>Logout</button> }
+
+
+{token ? 
+<form onSubmit={searchArtists}>
+  <input type="text" onChange={e => setSearchKey(e.target.value)}/>
+  <button type='submit'></button>
+</form>
+
+
+
+
+: <h2>Please login</h2>};
 </div>
       
     </div>

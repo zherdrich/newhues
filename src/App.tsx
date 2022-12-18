@@ -21,6 +21,7 @@ function App() {
 
   const [token, setToken] = useState("")
   const [searchKey, setSearchKey] = useState("")
+  const [artists, setArtists] = useState("")
 
   useEffect(() => {
     const hash = window.location.hash
@@ -32,9 +33,9 @@ function App() {
     
     window.location.hash = ""
     window.localStorage.setItem("token", token)
-    setToken(token)
   }
-
+  
+  setToken(token)
 }, [])
 
 const logout = () => {
@@ -56,10 +57,18 @@ const searchArtists = async (e:React.FormEvent<HTMLFormElement>) => {
         // params for spotify api for artists
     }
 })
+setArtists(data.artists.items);
 }
 
 
+const renderArtists = () => {
+  return artists.map(artist => (
+    <div key={artist.id}>
+      artist.
 
+    </div>
+  ))
+}
 
   return (
     <div className="App">
@@ -102,7 +111,9 @@ const searchArtists = async (e:React.FormEvent<HTMLFormElement>) => {
 </div>
       
     </div>
-  );
+
+);
 }
+{renderArtists()}
 
 export default App;

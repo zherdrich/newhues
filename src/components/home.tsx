@@ -6,5 +6,10 @@ import { Search } from "../models/id-models";
 
 export default function Home() {
 
-  
+  return (
+
+    <div>
+      test
+    </div>
+  )
 }

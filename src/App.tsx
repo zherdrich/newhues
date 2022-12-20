@@ -72,14 +72,14 @@ const renderArtists = () => {
 
   return (
     <div className="App">
-            {/* <Router>
+            <Router>
         <Routes>
           <Route path="/" element={} />
           <Route path="/search" element={<Search/>}/>
           <Route path="/result" element={<Result />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
-  </Router> */}
+  </Router>
 
   
   <div className="home">
@@ -114,6 +114,6 @@ const renderArtists = () => {
 
 );
 }
-{renderArtists()}
+// {renderArtists()}
 
 export default App;

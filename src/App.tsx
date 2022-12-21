@@ -16,6 +16,7 @@ import express from "express";
 import path from "path";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import TrackInfo from "./models/SpotifyInterface";
 
 function App() {
   const CLIENT_ID = "56f79d1a09c34459a7514616e29ec33c";
@@ -23,9 +24,9 @@ function App() {
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState<string | null>("");
   const [searchKey, setSearchKey] = useState("");
-  const [artists, setArtists] = useState("");
+  const [artists, setArtists] = useState<TrackInfo>();
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -42,7 +43,7 @@ function App() {
       window.localStorage.setItem("tokens", tokens);
     }
 
-    setToken(token);
+    setToken(tokens);
   }, []);
 
   const logout = () => {
@@ -65,19 +66,6 @@ function App() {
       },
     });
     setArtists(data.artists.items);
-  };
-
-  const renderArtists = () => {
-    return artists.map((artist) => (
-      <div key={artist.id}>
-        {artist.name}
-        {artist.images.length ? (
-          <img width={"100%"} src={artist.images[0].url} alt="" />
-        ) : (
-          <div>No Image</div>
-        )}
-      </div>
-    ));
   };
 
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Search } from "../models/id-models";
+import { Search } from "../models/SpotifyInterface";
 
 export default function Home() {
 

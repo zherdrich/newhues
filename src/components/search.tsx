@@ -3,27 +3,37 @@ import getAlbum from "../services/getAlbum";
 import { useEffect, useState } from "react";
 import { AlbumList } from "./testarray";
 import { stringify } from "querystring";
-import { Results, Search } from "../models/id-models";
+import TrackInfo from "../models/SpotifyInterface";
 
-
+interface ArtistInTrackInfo{
+  href: string,
+  id: string,
+  name: string
+}
 
 export default function SearchBar() {
 
     const apiKey1 = process.env.REACT_APP_API_KEY || "";
 
     const [query, setQuery] = useState("");
-    const [album, setAlbum] = useState<Search[]>([]);
+    const [album, setAlbum] = useState<TrackInfo[]>([]);
     useEffect(() => {
     getAlbum(query, apiKey1).then(data => {
+      let artists = [];
+      data.
     
         data.results.forEach((index) => {
             setAlbum(
                 [...album,{
-                    title: index.title,
-                    genre: index.genre.filter((x) => x),
-                    year: index.year,
-                    id: index.id,
-                    cover_image: index.cover_image}]
+                    album: {
+                      href: index.album.href,
+                      id: index.album.id,
+                      images: index.album.images,
+                      name: index.album.name,
+                      release_date: index.album.release_date
+                    },
+                    artists: []
+                  }]
             )
         })
     })

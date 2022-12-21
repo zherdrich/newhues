@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Results, Search} from "../models/id-models";
+import { Results, Search} from "../models/SpotifyInterface";
 
 
 

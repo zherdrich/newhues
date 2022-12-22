@@ -1,8 +1,7 @@
 import React from "react";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { Search } from "../models/SpotifyInterface";
+import { useState } from "react"
 
 export default function Home() {
 

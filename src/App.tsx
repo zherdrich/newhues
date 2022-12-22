@@ -30,22 +30,23 @@ function App() {
 
   useEffect(() => {
     const hash = window.location.hash;
-    let tokens = window.localStorage.getItem("tokens");
+    let token = window.localStorage.getItem("token");
 
-    if (!tokens && hash) {
-      tokens = hash
+    if (!token && hash) {
+      token = hash
         .substring(1)
         .split("&")
         .find((elem) => elem.startsWith("access_token"))!
         .split("=")[1];
 
       window.location.hash = "";
-      window.localStorage.setItem("tokens", tokens);
+      window.localStorage.setItem("token", token);
     }
 
-    setToken(tokens);
+    setToken(token);
+    console.log(token);
   }, []);
-
+  
   const logout = () => {
     setToken("");
     window.localStorage.removeItem("token");

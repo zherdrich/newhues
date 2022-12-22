@@ -20,24 +20,24 @@ export default function SearchBar() {
     useEffect(() => {
     getAlbum(query, apiKey1).then(data => {
       let artists = [];
-      data.
-    
-        data.results.forEach((index) => {
-            setAlbum(
-                [...album,{
-                    album: {
-                      href: index.album.href,
-                      id: index.album.id,
-                      images: index.album.images,
-                      name: index.album.name,
-                      release_date: index.album.release_date
-                    },
-                    artists: []
-                  }]
-            )
+      
+        // data.forEach((index) => {
+        //     setAlbum(
+        //         [...album,{
+        //             album: {
+        //               href: index.album.href,
+        //               id: index.album.id,
+        //               images: index.album.images,
+        //               name: index.album.name,
+        //               release_date: index.album.release_date,
+
+        //             },
+        //             artists: []
+        //           }]
+        //     )
         })
     })
-},[query])
+// },[query])
   return (
     <div className="search">
         <div className="main">
@@ -49,10 +49,10 @@ export default function SearchBar() {
         <ul className="list">
             {album.map((result) => 
             <li>
-                <p>{result.title}</p>
+                {/* <p>{result.title}</p>
                 <p>{result.genre}</p>
                 <p>{result.year}</p>
-                <img src={result.cover_image} alt="album cover" />
+                <img src={result.cover_image} alt="album cover" /> */}
             </li>
 
             )}

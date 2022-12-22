@@ -62,22 +62,23 @@ function App() {
       params: {
         q: searchKey,
         // state from above
-        type: "artist",
+        type: "album", 
         // params for spotify api for artists
       },
     });
-    setArtists(data.artists.items);
+    // setArtists(data.artists.items);
+    console.log(data)
   };
 
-  const renderArtists: any () => {
-    return artists.map(artist => (
-      <div key={artist.id}>
-        {artist.images.length ? <img src={artist.images[0].url} alt=""/> : <div>No Image</div>}
-        {artist.name}
+  // const renderArtists: any () => {
+  //   return artists.map(artist => (
+  //     <div key={artist.id}>
+  //       {artist.images.length ? <img src={artist.images[0].url} alt=""/> : <div>No Image</div>}
+  //       {artist.name}
 
-      </div>
-    ) )
-   }
+  //     </div>
+  //   ) )
+  //  }
 
 
 
@@ -120,7 +121,7 @@ function App() {
       </div>
     </div>
   );
-  renderArtists
+
 }
 
 export default App;

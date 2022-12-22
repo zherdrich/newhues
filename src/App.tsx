@@ -69,6 +69,19 @@ function App() {
     setArtists(data.artists.items);
   };
 
+  const renderArtists: any () => {
+    return artists.map(artist => (
+      <div key={artist.id}>
+        {artist.images.length ? <img src={artist.images[0].url} alt=""/> : <div>No Image</div>}
+        {artist.name}
+
+      </div>
+    ) )
+   }
+
+
+
+
   return (
     <div className="App">
       {token ? (
@@ -98,7 +111,7 @@ function App() {
         {token ? (
           <form onSubmit={searchArtists}>
             <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-            <button type="submit"></button>
+            <button type="submit">Search</button>
           </form>
         ) : (
           <h2>Please login</h2>
@@ -107,6 +120,7 @@ function App() {
       </div>
     </div>
   );
+  renderArtists
 }
 
 export default App;

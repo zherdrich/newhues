@@ -10,10 +10,10 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
-import Result from "./components/result";
-import Search from "./components/search";
-import express from "express";
-import path from "path";
+// import Result from "./components/result";
+// import Search from "./components/search";
+// import express from "express";
+// import path from "path";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TrackInfo from "./models/SpotifyInterface";
@@ -70,15 +70,15 @@ function App() {
     console.log(data)
   };
 
-  // const renderArtists: any () => {
-  //   return artists.map(artist => (
-  //     <div key={artist.id}>
-  //       {artist.images.length ? <img src={artist.images[0].url} alt=""/> : <div>No Image</div>}
-  //       {artist.name}
+  const renderArtists: any () => {
+    return artists.map(artist => (
+      <div key={artist.id}>
+        {artist.images.length ? <img src={artist.images[0].url} alt=""/> : <div>No Image</div>}
+        {artist.name}
 
-  //     </div>
-  //   ) )
-  //  }
+      </div>
+    ) )
+   }
 
 
 

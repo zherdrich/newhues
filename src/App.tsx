@@ -10,10 +10,10 @@ import {
   Link,
   NavLink,
 } from "react-router-dom";
-import Result from "./components/result";
-import Search from "./components/search";
-import express from "express";
-import path from "path";
+// import Result from "./components/result";
+// import Search from "./components/search";
+// import express from "express";
+// import path from "path";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TrackInfo from "./models/SpotifyInterface";

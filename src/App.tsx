@@ -52,9 +52,9 @@ function App() {
     window.localStorage.removeItem("token");
   };
 
-  const searchArtists = async (e: React.FormEvent<HTMLFormElement>) => {
+  const searchAlbum = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { data } = await axios.get("https://api.spotify.com/v1/search", {
+    const { data } = await axios.get("https://accounts.spotify.com/api/token", {
       headers: {
         Authorization: `Bearer ${token}`,
         // uses bearer and the token above
@@ -70,15 +70,15 @@ function App() {
     console.log(data)
   };
 
-  const renderArtists: any () => {
-    return artists.map(artist => (
-      <div key={artist.id}>
-        {artist.images.length ? <img src={artist.images[0].url} alt=""/> : <div>No Image</div>}
-        {artist.name}
+  // const renderArtists: any () => {
+  //   return artists.map(artist => (
+  //     <div key={artist.id}>
+  //       {artist.images.length ? <img src={artist.images[0].url} alt=""/> : <div>No Image</div>}
+  //       {artist.name}
 
-      </div>
-    ) )
-   }
+  //     </div>
+  //   ) )
+  //  }
 
 
 
@@ -110,7 +110,7 @@ function App() {
           <button onClick={logout}>Logout</button>
         )}
         {token ? (
-          <form onSubmit={searchArtists}>
+          <form onSubmit={searchAlbum}>
             <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
             <button type="submit">Search</button>
           </form>

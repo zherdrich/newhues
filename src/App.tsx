@@ -54,7 +54,7 @@ function App() {
 
   const searchAlbum = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { data } = await axios.get("https://accounts.spotify.com/api/token", {
+    const { data } = await axios.get("http://api.spotify.com/v1/search", {
       headers: {
         Authorization: `Bearer ${token}`,
         // uses bearer and the token above

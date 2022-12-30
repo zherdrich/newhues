@@ -89,12 +89,7 @@ function App() {
 
 
   return (
-    // code ? <Dashboard code={code}/> :
-    <div>
-      <Login />
-
-      <div>hello</div>
-    </div>
+    code ? <Dashboard code={code}/> : <Login />
     // <div className="App">
     //   {token ? (
     //     <Router>

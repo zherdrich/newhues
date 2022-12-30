@@ -23,3 +23,5 @@ spotifyApi.authorizationCodeGrant(code).then(data => {
     res.sendStatus(400)
 })
 })
+
+app.listen(3000)

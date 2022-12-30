@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./components/home";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Login from './Login'
+import Dashboard from "./Dashboard";
 import {
   BrowserRouter as Router,
   Routes,
@@ -19,6 +20,8 @@ import {
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TrackInfo from "./models/SpotifyInterface";
+
+const code = new URLSearchParams(window.location.search).get ('code')
 
 function App() {
   // const CLIENT_ID = "56f79d1a09c34459a7514616e29ec33c";
@@ -86,8 +89,12 @@ function App() {
 
 
   return (
+    // code ? <Dashboard code={code}/> :
+    <div>
+      <Login />
 
-    <Login />
+      <div>hello</div>
+    </div>
     // <div className="App">
     //   {token ? (
     //     <Router>

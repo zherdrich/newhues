@@ -1,5 +1,5 @@
 import axios from "axios";
-import Information from "../models/id-models";
+import Information from "../models/SpotifyInterface";
 
 //install axios
 //replace parameters with parameters from discogs api

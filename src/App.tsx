@@ -13,9 +13,9 @@ import { useState } from 'react';
 function App() {
 
 
-  const CLIENT_ID = "xGjFKCRurYCzGXLXddxG"
+  const CLIENT_ID = "56f79d1a09c34459a7514616e29ec33c"
   const REDIRECT_URI = "http://localhost:3000"
-  const AUTH_ENDPOINT = "https://www.discogs.com/oauth/authorize"
+  const AUTH_ENDPOINT = "https://www.accounts.spotify.com/authorize"
   const RESPONSE_TYPE = "token"
   const [token, setToken] = useState("")
   const [searchKey, setSearchKey] = useState("")
@@ -39,12 +39,9 @@ function App() {
 
 
       <div className='loginpage'>
-      {!token ?
-      <a className='logintosongify' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>loginToSongify</a>
-      : <button className='logoutButton' onClick={logout}><CgLogIn/></button>}
-      {token ? <form onSubmit={searchArtists}>
 
-      </form> : <h1></h1>}
+      <a className='logintosongify' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>loginToSongify</a>
+
   </div>
     </div>
   );
